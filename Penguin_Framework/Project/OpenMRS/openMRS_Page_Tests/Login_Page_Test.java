@@ -13,7 +13,7 @@ import openMRS_Page_Actions.Login_Page_Action;
 
 public class Login_Page_Test extends BaseClass{
  
-    @Test (priority = 0, description="valid Login Scenario with correct username and password.",dataProvider = "getData", dataProviderClass = BaseClass.class)
+    @Test (priority = 0, description="valid Login Scenario with correct username and password.")
     public void succesfulLogin() throws InterruptedException {
             
         Login_Page_Action loginPA = new Login_Page_Action(driver);
