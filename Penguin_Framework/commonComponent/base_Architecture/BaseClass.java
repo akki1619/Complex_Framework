@@ -45,15 +45,7 @@ public class BaseClass {
     }
     
     
- /*   @DataProvider
-    public Object[][] getData(String FilePath, String SheetName, int iTestCaseRow) throws Exception{
- 
-         Object[][] testObjArray = ExcelUtils.getTableArray(FilePath, SheetName, iTestCaseRow);
- 
-         return (testObjArray);
- 
- }*/
-    
+
     
  
 }
