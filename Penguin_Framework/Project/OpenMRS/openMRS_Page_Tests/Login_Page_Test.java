@@ -2,10 +2,12 @@ package openMRS_Page_Tests;
 
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import OpenMRS.PropertyReader;
 import base_Architecture.BaseClass;
+import base_Architecture.ExcelUtils;
 import base_Architecture.ReportTestManager;
 import openMRS_Page_Actions.Home_Page_Action;
 import openMRS_Page_Actions.Login_Page_Action;
@@ -13,7 +15,7 @@ import openMRS_Page_Actions.Login_Page_Action;
 
 public class Login_Page_Test extends BaseClass{
  
-    @Test (priority = 0, description="valid Login Scenario with correct username and password.")
+   @Test (priority = 0, description="valid Login Scenario with correct username and password.")
     public void succesfulLogin() throws InterruptedException {
             
         Login_Page_Action loginPA = new Login_Page_Action(driver);
@@ -32,4 +34,24 @@ public class Login_Page_Test extends BaseClass{
         Assert.assertEquals("Home ", homePA.verifyTitle());
          
      }
+    
+    
+    @Test(dataProvider="testDataProvider")
+    public void dataProviderCheck(String s1,String s2,String s3) {
+    	System.out.println(s1+s2+s3);
+    }
+    
+    
+    @DataProvider(name="testDataProvider")
+    public Object[][] getData() throws Exception{
+ 
+         Object[][] testObjArray = ExcelUtils.getTestData("example.xlsx", "Sheet1");
+        
+         
+         
+         return (testObjArray);
+ 
+ }
+    
+    
 }

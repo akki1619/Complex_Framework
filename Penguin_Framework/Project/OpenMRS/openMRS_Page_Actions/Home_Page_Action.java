@@ -41,4 +41,17 @@ public class Home_Page_Action {
 	}
 	
 	
+	public MyAccount_Page_Action clickFindPatient(){
+		WebElement myFindPatient = homePL.getFindPatient();
+		if(WebElementCommon.webElementPresent(myFindPatient)){
+			if(WebElementCommon.webElementClickble(myFindPatient)){
+				WebButton.clickBtn(myFindPatient);
+			}
+		}
+		
+		return new MyAccount_Page_Action(driver);
+	}
+	
+	
+	
 }

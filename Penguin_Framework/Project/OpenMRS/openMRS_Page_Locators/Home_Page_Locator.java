@@ -29,7 +29,12 @@ public class Home_Page_Locator {
 	}
 	
 	
+	@FindBy(id="coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension")
+	private WebElement findPatient;
 	
+	public WebElement getFindPatient(){
+		return findPatient;
+	}
 	
 	
 }
