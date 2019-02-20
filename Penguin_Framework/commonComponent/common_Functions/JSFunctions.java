@@ -16,25 +16,30 @@ public class JSFunctions {
 	
 		js = (JavascriptExecutor) driver;  
 		
-		js.executeScript("argument[0].scrollIntoView()", element);
+		js.executeScript("arguments[0].scrollIntoView();", element);
 	
 	
 	}
 	
 	
-	public void scrollByPixel(int xPixels,int yPixels) {
+	public void scrollByPixel(WebDriver driver,int xPixels,int yPixels) {
 		
-		
-		
-		  js.executeScript("window.scrollBy("+xPixels+","+yPixels+")");
+		js = (JavascriptExecutor) driver; 
+		 
+		js.executeScript("window.scrollBy("+xPixels+","+yPixels+")");
 	
 	
-		  
-		
-		  
 	}
 	
+	public void scrollToBottom(WebDriver driver) {
+		
+		
+		js = (JavascriptExecutor) driver;  
+		
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	
+	
+	}
 	
 	
 	
